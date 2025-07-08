@@ -76,14 +76,40 @@ h6 {
     isolation: isolate;
 }
 
+li {
+    list-style: none;
+}
+
 /* styling */
 
 
-main {
-    
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
+
+main {
+    min-height: 100vh;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .grid {
     display: grid;
-    height: 50%;
-    width: auto;
+    height: 50vh;
+    width: 50vh;
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr;
+    gap: 5px;
+
+
+    li {
+        background: white;
+
+    }
 }
