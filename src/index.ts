@@ -1,6 +1,8 @@
 const gridUL = document.querySelector(".grid") as HTMLUListElement;
+const slider = document.getElementById("grid-size") as HTMLInputElement;
+const sizeLabel = document.getElementById("size-label") as HTMLParagraphElement;
 
-const size = 9;
+let size = 9;
 const numberOfSquares = size * size;
 const mid = Math.floor(size / 2);
 let grid: Cell[] = [];
@@ -14,6 +16,7 @@ type Cell = {
 
 
 function createGrid() {
+    grid.length = 0;
     for (let y = 0; y < size; y++) {
         for (let x = 0; x < size; x++) {
             grid.push({ x, y })
@@ -26,7 +29,7 @@ function paintDiamondShape(): void {
     grid.forEach(cell => {
         const dist = Math.abs(mid - cell.y);
         const left = dist;
-        const right = size -1 - dist;
+        const right = size - 1 - dist;
         if (cell.x == left || cell.x === right) {
             cell.color = color;
         }
@@ -35,6 +38,7 @@ function paintDiamondShape(): void {
 
 function renderGrid() {
     gridUL.innerHTML = "";
+
     grid.forEach((cell) => {
         const li = document.createElement("li");
         li.dataset.x = String(cell.x);
@@ -48,6 +52,21 @@ function renderGrid() {
     })
 
 }
+
+slider.addEventListener("input", (event: Event) => {
+    event.preventDefault();
+    const target = event.target;
+
+    if (target && target.value) {
+
+        size = target.value
+        sizeLabel.innerText = `${target.value} x ${target.value}` 
+        createGrid();
+        paintDiamondShape();
+        renderGrid();
+    }
+
+})
 
 createGrid();
 paintDiamondShape();
