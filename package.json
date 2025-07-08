@@ -1,0 +1,15 @@
+{
+  "name": "symbolicum",
+  "version": "1.0.0",
+  "description": "generating combination of symbols",
+  "license": "ISC",
+  "author": "Andreas Granér",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

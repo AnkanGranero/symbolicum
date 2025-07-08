@@ -1,0 +1,28 @@
+# OS-filer
+.DS_Store
+Thumbs.db
+
+# Node (om du använder npm/yarn)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Build/artifacts (om du bygger saker)
+dist/
+build/
+out/
+*.zip
+
+# Environment/config
+.env
+.env.local
+.env.*.local
