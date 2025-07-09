@@ -104,11 +104,11 @@ function renderGrid() {
 
 sizeSlider.addEventListener("input", (event: Event) => {
     event.preventDefault();
-    const target = event.target;
+    const target = event.target as HTMLInputElement;
 
     if (target && target.value) {
 
-        gridSize = target.value
+        gridSize = Number(target.value)
         sizeLabel.innerText = `${target.value} x ${target.value}`
         createGrid();
         renderGrid();
@@ -118,7 +118,7 @@ sizeSlider.addEventListener("input", (event: Event) => {
 
 patternSlider.addEventListener("input", (event: Event) => {
     event.preventDefault();
-    const target = event.target;
+    const target = event.target as HTMLInputElement;
 
     if (target && target.value) {
 
