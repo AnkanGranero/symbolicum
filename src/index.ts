@@ -2,7 +2,10 @@ const gridUL = document.querySelector(".grid") as HTMLUListElement;
 const sizeSlider = document.getElementById("grid-size") as HTMLInputElement;
 const sizeLabel = document.getElementById("size-label") as HTMLParagraphElement;
 const patternSlider = document.getElementById("grid-pattern") as HTMLInputElement;
+const marginSlider = document.getElementById("pattern-margin") as HTMLInputElement;
 const patternLabel = document.getElementById("pattern-label") as HTMLParagraphElement;
+const marginLabel = document.getElementById("margin-label") as HTMLParagraphElement;
+
 
 const patterns = ["diamond", "square"];
 let selectedPatternIndex = 0;
@@ -34,8 +37,9 @@ function paintDiamondShape(): void {
     const mid = Math.floor(gridSize / 2);
     grid.forEach(cell => {
         const dist = Math.abs(mid - cell.y);
-        const left = dist;
-        const right = gridSize - 1 - dist;
+        if (dist > mid - margin) return;
+        const left = margin + dist;
+        const right = gridSize - (1 + margin) - dist;
         if (cell.x == left || cell.x === right) {
             cell.color = color;
         }
@@ -130,6 +134,20 @@ patternSlider.addEventListener("input", (event: Event) => {
 
 })
 
+marginSlider.addEventListener("input", (event: Event) => {
+    event.preventDefault();
+    const target = event.target as HTMLInputElement;
+
+    if (target && target.value) {
+
+        margin = Number(target.value)
+        marginLabel.innerText = `${margin}`
+        createGrid();
+        renderGrid();
+    }
+
+})
+/* skapa funktion för att hantera event som jag kan använda till samtliga sliders.*/
 createGrid();
 renderGrid();
 

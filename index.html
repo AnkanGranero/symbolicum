@@ -12,15 +12,23 @@
 <body>
     <main>
         <section class="controls">
-            <label for="grid-size"></label>
-            <input id="grid-size" class="vertical" type="range" min="5" max="21" step="2" value="5">
-              <p id="size-label">5×5</p>
-                  <label for="grid-pattern"></label>
+            <label for="grid-pattern">Grid pattern</label>
             <input id="grid-pattern" class="vertical" type="range" min="0" max="1" step="1" value="0">
-              <p id="pattern-label">Diamond</p>
+            <p id="pattern-label">Diamond</p>
+            <label for="pattern-margin">pattern margin</label>
+            <input id="pattern-margin" class="vertical" type="range" min="0" max="10" step="1" value="0">
+            <p id="margin-label">0</p>
         </section>
         <ul class="grid">
         </ul>
+        <section class="controls">
+            <label for="grid-size">Grid size</label>
+            <input id="grid-size" class="vertical" type="range" min="5" max="21" step="2" value="5">
+            <p id="size-label">5×5</p>
+            <label for="grid-pattern"></label>
+            <label for="chaos-slider">Chaos slider</label>
+            <input id="chaos-slider" class="vertical" type="range" min="0" max="50" step="1" value="0">
+        </section>
     </main>
 
 </body>
