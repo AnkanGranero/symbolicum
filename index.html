@@ -1,36 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./dist/index.js" defer></script>
-    <link rel="stylesheet" href="./styles/index.css">
-    <title>SYMBOLICUM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYMBOLICUM</title>
 </head>
-
 <body>
-    <main>
-        <section class="controls">
-            <label for="grid-pattern">Grid pattern</label>
-            <input id="grid-pattern" class="vertical" type="range" min="0" max="1" step="1" value="0">
-            <p id="pattern-label">Diamond</p>
-            <label for="pattern-margin">pattern margin</label>
-            <input id="pattern-margin" class="vertical" type="range" min="0" max="10" step="1" value="0">
-            <p id="margin-label">0</p>
-        </section>
-        <ul class="grid">
-        </ul>
-        <section class="controls">
-            <label for="grid-size">Grid size</label>
-            <input id="grid-size" class="vertical" type="range" min="5" max="21" step="2" value="5">
-            <p id="size-label">5×5</p>
-            <label for="grid-pattern"></label>
-            <label for="chaos-slider">Chaos slider</label>
-            <input id="chaos-slider" class="vertical" type="range" min="0" max="50" step="1" value="0">
-        </section>
-    </main>
-
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
-
 </html>
