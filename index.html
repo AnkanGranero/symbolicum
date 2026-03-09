@@ -1,25 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./dist/index.js" defer></script>
-    <link rel="stylesheet" href="./styles/index.css">
-    <title>SYMBOLICUM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYMBOLICUM</title>
 </head>
-
 <body>
-    <main>
-        <section class="controls">
-            <label for="grid-size"></label>
-            <input id="grid-size" class="vertical" type="range" min="5" max="21" step="2" value="5">
-              <p id="size-label">5×5</p>
-        </section>
-        <ul class="grid">
-        </ul>
-    </main>
-
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
-
 </html>
